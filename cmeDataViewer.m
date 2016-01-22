@@ -882,14 +882,14 @@ set(hz, 'ActionPostCallback', @czoom);
 
 
     function frameSlider_Callback(~, eventdata)
-        obj = get(eventdata, 'AffectedObject'); % this contains the current, continuous value
+        obj = eventdata.AffectedObject; % this contains the current, continuous value
         fidx = round(get(obj, 'Value'));
         updateSlice();
     end
 
 
     function trackSlider_Callback(~, eventdata)
-        obj = get(eventdata, 'AffectedObject');
+        obj = eventdata.AffectedObject;
         t0 = round(get(obj, 'Value'));
         tmp = find(selIndex);
         tcur = tmp(t0);
@@ -1136,7 +1136,7 @@ set(hz, 'ActionPostCallback', @czoom);
         
         
         function minSlider_Callback(~, eventdata)
-            obj = get(eventdata, 'AffectedObject');
+            obj = eventdata.AffectedObject;
             minVal = round(get(obj, 'Value'));
             if minVal >= maxVal
                 minVal = maxVal;
@@ -1146,7 +1146,7 @@ set(hz, 'ActionPostCallback', @czoom);
         end
         
         function maxSlider_Callback(~, eventdata)
-            obj = get(eventdata, 'AffectedObject');
+            obj = eventdata.AffectedObject;
             maxVal = round(get(obj, 'Value'));
             if maxVal <= minVal
                 maxVal = minVal;

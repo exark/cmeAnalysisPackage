@@ -138,8 +138,8 @@ end
 
 % Graphical output
 %if ~ip.Results.PlotAll % otherwise this is generated in runLifetimeAnalysis()
-    plotLifetimes(res.lftRes, 'DisplayMode', ip.Results.DisplayMode, 'PlotAll', false,...
-        'SlaveNames', chNames(2:end));
+%    plotLifetimes(res.lftRes, 'DisplayMode', ip.Results.DisplayMode, 'PlotAll', false,...
+%        'SlaveNames', chNames(2:end));
 %end
 
 % res.cohorts = plotIntensityCohorts(data, 'MaxIntensityThreshold', res.lftRes.MaxIntensityThreshold,...

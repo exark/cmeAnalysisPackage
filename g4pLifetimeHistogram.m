@@ -4,11 +4,11 @@ function [fractionDist, cumDist] = g4pLifetimeHistogram(theResStruct)
 % an absolute histogram) as both a fractional histogram and as a cumulative
 % distribution.
 
-theHist=theRes.lftRes.lftHist_total;
+theHist=theResStruct.lftRes.lftHist_total;
 fractionDist=[];
 
 for i=1:size(theHist,1)
     fractionDist(i,:) = theHist(i,:)/sum(theHist(i,:));
 end
 
-cumDist = cumsum(theHist,2);
+cumDist = cumsum(fractionDist,2);
