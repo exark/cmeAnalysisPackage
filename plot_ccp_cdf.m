@@ -9,6 +9,7 @@ function [ecdf_res, epdf_res, edf_res, t_res] = plot_ccp_cdf(resStruct, varargin
 %           Color : color of line to be drawn
 %           Graph : axis to draw line on (defaults to current figure)
 %           Floor : Smallest lifetime to include in CDF
+%       Normalize : Normalize lifetime counts to cell area (px)
 %
 % Outputs:
 %           ecdf_res : the empirical cumulative distribution generated for the graph
@@ -20,7 +21,7 @@ p = inputParser;
 p.addOptional('Color', 'b');
 p.addOptional('Graph', {});
 p.addOptional('Floor', 0, @isscalar);
-p.addOptional('Normalize',false, @isboolean);
+p.addOptional('Normalize',false, @islogical);
 p.parse(varargin{:});
 
 graphColor = p.Results.Color;
